@@ -1,0 +1,42 @@
+{ 
+    "generic":
+    {
+        "email" : [
+            [{"LIKE_EMAIL": true, "OP" : "*"}]
+        ],
+        "numbers" : [
+            [{"LIKE_NUM": true, "OP" : "*"}]
+        ],
+        "url" : [
+            [{"LIKE_URL": true, "OP" : "*"}]
+        ],
+        "ip-address" : [
+            [{"TEXT" : {"REGEX" : "([0-9A-z]{1,4}:){7}"}}],
+            [{"TEXT" : {"REGEX" : "(\\d{1,3}[.]){3}"}}]
+        ],
+        "mac-address" : [
+            [{"TEXT" : {"REGEX" : "([0-9A-z]{2}:){5}"}}]
+        ]
+    },
+    "nouns" :
+    {
+        "proper" : [
+            [{"POS": "PROPN", "OP": "*"}]
+        ]
+    },
+    "client" :
+    {
+        "random text start random text end random text": [
+            [{"LEMMA": "start"}, {"IS_ALPHA": true, "OP": "*"}, {"LEMMA": "end"}]
+        ],
+        "exact" : [
+            [{"TEXT": "Exact text"}]
+        ],
+        "regex-start" : [
+            [{"LEMMA": "start"}, {"IS_ALPHA": true, "OP": "*"}, {"TEXT": {"REGEX": "any"}}]
+        ],
+        "regex-end" : [
+            [{"TEXT": {"REGEX": "any"}}, {"IS_ALPHA": true, "OP": "*"}, {"LEMMA": "end"}]
+        ]
+    }
+}

@@ -1,0 +1,6 @@
+dateparser
+spacy
+pandas
+pytest
+tqdm
+requests
