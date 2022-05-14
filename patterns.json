@@ -24,7 +24,13 @@
             [{"POS": "PROPN", "OP": "*"}]
         ]
     },
-    "client" :
+    "client" : 
+    {
+        "email" : [
+            [{"TEXT": "X-From:"}, {"IS_ALPHA" : true, "OP" : "*"}, {"TEXT": "X-To:"}]
+        ]
+    },
+    "tests" :
     {
         "random text start random text end random text": [
             [{"LEMMA": "start"}, {"IS_ALPHA": true, "OP": "*"}, {"LEMMA": "end"}]
